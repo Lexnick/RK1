@@ -6,45 +6,16 @@
 int main() {
     std::vector<char> vec;
     std::vector<float> vec1;
-    std::string encrypted_text;
-    std::cout<<"Enter encrypted text"<<std::endl;
-    std::getline(std::cin, encrypted_text);
-    int count_space=0;
-    for (int n=0; n!=encrypted_text.length(); n++)
-    {
-        if (encrypted_text[n]==32)
-            count_space+=1;
+    std::string encrypted_text("WZJ G++ NFXRFIDDTOR BIORAIRJ ZIU I ZTUWXFP RXTOR KIGM WX 1979, HZJO KYIFOJ UWFXAUWFAN HIU VXTOR HXFM EXF ZTU NZ.V. WZJUTU. XOJ XE WZJ BIORAIRJU UWFXAUWFAN ZIV WZJ XNNXFWAOTWP WX HXFM HTWZ HIU I BIORAIRJ GIBBJV UTDABI, HZTGZ IU WZJ OIDJ TDNBTJU TU I BIORAIRJ NFTDIFTBP VJUTROJV EXF UTDABIWTXOU. WZJ UTDABI 67 BIORAIRJ - HZTGZ HIU WZJ SIFTIOW WZIW UWFXAUWFAN HXFMJV HTWZ - TU FJRIFVJV IU WZJ ETFUW BIORAIRJ WX UANNXFW WZJ XKYJGW-XFTJOWJV NFXRFIDDTOR NIFIVTRD. UWFXAUWFAN EXAOV WZIW WZTU NIFIVTRD HIU SJFP AUJEAB EXF UXEWHIFJ VJSJBXNDJOW, ZXHJSJF WZJ UTDABI BIORAIRJ HIU EIF WXX UBXH EXF NFIGWTGIB AUJ. UZXFWBP WZJFJIEWJF, ZJ KJRIO HXFM XO \"G HTWZ GBIUUJU\", HZTGZ IU WZJ OIDJ TDNBTJU HIU DJIOW WX KJ I UANJFUJW XE WZJ G BIORAIRJ. ZTU RXIB HIU WX IVV XKYJGW-XFTJOWJV NFXRFIDDTOR TOWX WZJ G BIORAIRJ, HZTGZ HIU IOV UWTBB TU I BIORAIRJ HJBB-FJUNJGWJV EXF TWU NXFWIKTBTWP HTWZXAW UIGFTETGTOR UNJJV XF BXH-BJSJB EAOGWTXOIBTWP. ZTU BIORAIRJ TOGBAVJV GBIUUJU, KIUTG TOZJFTWIOGJ, TOBTOTOR, VJEIABW EAOGWTXO IFRADJOWU, IOV UWFXOR WPNJ GZJGMTOR TO IVVTWTXO WX IBB WZJ EJIWAFJU XE WZJ G BIORAIRJ. WZJ ETFUW G HTWZ GBIUUJU GXDNTBJF HIU GIBBJV GEFXOW, HZTGZ HIU VJFTSJV EFXD I G GXDNTBJF GIBBJV GNFJ. TW HIU I NFXRFID VJUTROJV WX WFIOUBIWJ G HTWZ GBIUUJU GXVJ WX XFVTOIFP G. I FIWZJF TOWJFJUWTOR NXTOW HXFWZ OXWTOR TU WZIW GEFXOW HIU HFTWWJO DXUWBP TO G HTWZ GBIUUJU, DIMTOR TW I UJBE-ZXUWTOR GXDNTBJF (I GXDNTBJF WZIW GIO GXDNTBJ TWUJBE). GEFXOW HXABV BIWJF KJ IKIOVXOJV TO 1993 IEWJF TW KJGIDJ VTEETGABW WX TOWJRFIWJ OJH EJIWAFJU TOWX TW, OIDJBP G++ JCGJNWTXOU. OXOJWZJBJUU, GEFXOW DIVJ I ZARJ TDNIGW XO WZJ TDNBJDJOWIWTXOU XE EAWAFJ GXDNTBJFU IOV XO WZJ AOTC XNJFIWTOR UPUWJD. TO 1983, WZJ OIDJ XE WZJ BIORAIRJ HIU GZIORJV EFXD G HTWZ GBIUUJU WX G++. WZJ ++ XNJFIWXF TO WZJ G BIORAIRJ TU IO XNJFIWXF EXF TOGFJDJOWTOR I SIFTIKBJ, HZTGZ RTSJU UXDJ TOUTRZW TOWX ZXH UWFXAUWFAN FJRIFVJV WZJ BIORAIRJ. DIOP OJH EJIWAFJU HJFJ IVVJV IFXAOV WZTU WTDJ, WZJ DXUW OXWIKBJ XE HZTGZ IFJ STFWAIB EAOGWTXOU, EAOGWTXO XSJFBXIVTOR, FJEJFJOGJU HTWZ WZJ & UPDKXB, WZJ GXOUW MJPHXFV, IOV UTORBJ-BTOJ GXDDJOWU AUTOR WHX EXFHIFV UBIUZJU (HZTGZ TU I EJIWAFJ WIMJO EFXD WZJ BIORAIRJ KGNB).");
+    char encrypted_alphabet[27];
+    std::cout<<"Enter the encrypted alphabet"<<std::endl;
+    for (int i=0; i<26;i++){
+        std::cout<<"Enter the decryption for the letter '"<< static_cast<char>(i+65)<<"'"<<std::endl;
+        std::cin>>encrypted_alphabet[i];
     }
-
-    for (int i=65; i<91;i++) {
-        int count = 0;
-        for (int n = 0; n != encrypted_text.length(); n++) {
-            if (encrypted_text[n] == i)
-                count += 1;
-        }
-        std::cout<< static_cast<char>(i)<<" - "<<static_cast<float>(count) / (encrypted_text.length()-count_space)*100<<std::endl;
-    }
-    char letter1;
-    char letter2;
-    bool contine = true;
-    int a=0;
-    while (contine==true){
-        contine=false;
-        std::cout<<"Enter the encrypted letter"<<std::endl;
-        std::cin>>letter1;
-        std::cout<<"Enter the decrypted letter"<<std::endl;
-        std::cin>>letter2;
-        for (int i=0; i<encrypted_text.length(); i++)
-        {
-            if (encrypted_text[i]==letter1){
-                encrypted_text[i]=letter2;
-            }
-        }
-        std::cout<<"Letters were swapped"<<std::endl;
-        std::cout<<"Do u want to continue? Type 1 if yes; 0 if no"<<std::endl;
-        std::cin>>a;
-        if (a==1){
-            contine=true;}
+ for (int i=0; i<encrypted_text.length(); i++){
+        if ((encrypted_text[i]>64)&&(encrypted_text[i]<91))
+        encrypted_text[i]=encrypted_alphabet[encrypted_text[i]-65];
     }
     std::cout<<encrypted_text;
     return 0;
